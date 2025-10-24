@@ -430,7 +430,7 @@ flask db history
 
 ---
 
-## Deployment
+## Deployment, No implmentado
 
 ### Producción con Gunicorn + Nginx
 
