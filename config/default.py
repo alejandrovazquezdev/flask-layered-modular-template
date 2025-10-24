@@ -26,8 +26,8 @@ MAIL_SERVER = 'tu servidor smtp'
 MAIL_PORT = 587
 MAIL_USERNAME = 'tu correo'
 MAIL_PASSWORD = 'tu contraseña'
-DONT_REPLY_FROM_EMAIL = 'dirección from'
-ADMINS = ('juanjo@j2logo.com', )
+DONT_REPLY_FROM_EMAIL = ('No Reply', 'noreply@ejemplo.com')
+ADMINS = ('admin@ejemplo.com', )
 MAIL_USE_TLS = True
 MAIL_DEBUG = False
 

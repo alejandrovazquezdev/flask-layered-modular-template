@@ -3,12 +3,14 @@ from logging.handlers import SMTPHandler
 
 from flask import Flask, render_template
 from flask_login import LoginManager
+from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
 login_manager = LoginManager()
 db = SQLAlchemy()
 migrate = Migrate()
+mail = Mail()
 
 
 def verbose_formatter():
@@ -107,6 +109,7 @@ def create_app(settings_module):
     # Inicializar extensiones
     db.init_app(app)
     migrate.init_app(app, db)
+    mail.init_app(app)
     login_manager.init_app(app)
     login_manager.login_view = "auth.login"
     

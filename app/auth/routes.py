@@ -1,8 +1,9 @@
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, current_app
 from flask_login import current_user, login_user, logout_user
 from urllib.parse import urlparse
 
 from app import login_manager
+from app.common.mail import send_email
 from . import auth_bp
 from .forms import SignupForm, LoginForm
 from .models import User
@@ -32,6 +33,15 @@ def show_signup_form():
             user = User(name=name, email=email)
             user.set_password(password)
             user.save()
+            
+            # Enviar email de bienvenida
+            send_email(
+                subject='¡Bienvenido a Miniblog!',
+                recipients=[email],
+                text_body=f'Hola {name}, ¡bienvenido a Miniblog!',
+                html_body=f'<p>Hola <strong>{name}</strong>, ¡bienvenido a <strong>Miniblog</strong>!</p>'
+            )
+            
             login_user(user, remember=True)
             return redirect(url_for('public.index'))
     return render_template("auth/signup_form.html", form=form, error=error)
