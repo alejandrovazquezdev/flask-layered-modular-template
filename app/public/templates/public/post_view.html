@@ -4,5 +4,8 @@
 
 {% block content %}
     <h1>{{ post.title }}</h1>
+    <div>
+        <span class="blogDate">{{ post.created|datetime('full') }}</span>
+    </div>
     {{ post.content }}
 {% endblock %}

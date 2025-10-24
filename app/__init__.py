@@ -79,6 +79,11 @@ def configure_logging(app):
         l.propagate = False
 
 
+def register_filters(app):
+    from app.common.filters import format_datetime
+    app.jinja_env.filters['datetime'] = format_datetime
+
+
 def register_error_handlers(app):
 
     @app.errorhandler(500)
@@ -112,6 +117,9 @@ def create_app(settings_module):
     mail.init_app(app)
     login_manager.init_app(app)
     login_manager.login_view = "auth.login"
+    
+    # Registrar filtros
+    register_filters(app)
     
     # Registrar blueprints
     from app.public import public_bp
