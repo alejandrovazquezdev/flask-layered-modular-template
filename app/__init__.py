@@ -6,14 +6,15 @@ login_manager = LoginManager()
 db = SQLAlchemy()
 
 
-def create_app():
-    """Factory function para crear la aplicación Flask"""
-    app = Flask(__name__)
-    
-    # Configuración
-    app.config['SECRET_KEY'] = '7110c8ae51a4b5af97be6534caef90e4bb9bdcb3380af008f90b23a5d1616bf319bc298105da20fe'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///miniblog.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+def create_app(settings_module):
+    app = Flask(__name__, instance_relative_config=True)
+    # Load the config file specified by the APP environment variable
+    app.config.from_object(settings_module)
+    # Load the configuration from the instance folder
+    if app.config.get('TESTING', False):
+        app.config.from_pyfile('config-testing.py', silent=True)
+    else:
+        app.config.from_pyfile('config.py', silent=True)
     
     # Inicializar extensiones
     db.init_app(app)

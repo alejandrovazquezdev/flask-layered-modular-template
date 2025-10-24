@@ -5,3 +5,4 @@ __pycache__/
 .env
 .mise.toml
 mise.toml
+instance/
