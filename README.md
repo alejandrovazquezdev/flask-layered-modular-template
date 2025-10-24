@@ -4,7 +4,6 @@
   <img src="https://img.shields.io/badge/Flask-3.0.0-green?style=for-the-badge&logo=flask" alt="Flask">
   <img src="https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python" alt="Python">
   <img src="https://img.shields.io/badge/SQLAlchemy-2.0-red?style=for-the-badge&logo=sqlite" alt="SQLAlchemy">
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
 </p>
 
 <p align="center">
@@ -550,12 +549,6 @@ Si encuentras un bug, por favor:
    - Comportamiento esperado vs actual
    - Capturas de pantalla (si aplica)
    - Entorno (OS, Python version, etc.)
-
----
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver archivo `LICENSE` para más detalles.
 
 ---
 
