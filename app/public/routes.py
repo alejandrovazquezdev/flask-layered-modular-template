@@ -1,6 +1,6 @@
 import logging
 
-from flask import abort, render_template, current_app
+from flask import abort, render_template, current_app, request
 
 from app.models import Post
 from . import public_bp
@@ -12,8 +12,10 @@ logger = logging.getLogger(__name__)
 def index():
     current_app.logger.info('Mostrando los posts del blog')
     logger.info('Mostrando los posts del blog')
-    posts = Post.get_all()
-    return render_template("public/index.html", posts=posts)
+    page = int(request.args.get('page', 1))
+    per_page = current_app.config['ITEMS_PER_PAGE']
+    post_pagination = Post.all_paginated(page, per_page)
+    return render_template("public/index.html", post_pagination=post_pagination)
 
 
 @public_bp.route("/p/<string:slug>/")
