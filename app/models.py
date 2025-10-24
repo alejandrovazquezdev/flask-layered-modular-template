@@ -21,21 +21,18 @@ class Post(db.Model):
             db.session.add(self)
         if not self.title_slug:
             self.title_slug = slugify(self.title)
+            
+        saved = False
+        count = 0
+        while not saved:
             try:
                 db.session.commit()
+                saved = True
             except IntegrityError:
                 db.session.rollback()
-                count = 1
-                while True:
-                    self.title_slug = f"{slugify(self.title)}-{count}"
-                    try:
-                        db.session.commit()
-                        break
-                    except IntegrityError:
-                        db.session.rollback()
-                        count += 1
-        else:
-            db.session.commit()
+                db.session.add(self)
+                count += 1
+                self.title_slug = f"{slugify(self.title)}-{count}"
     
     def delete(self):
         db.session.delete(self)

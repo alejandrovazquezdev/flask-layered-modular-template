@@ -12,14 +12,12 @@ logger = logging.getLogger(__name__)
 
 
 @admin_bp.route("/admin/")
-@login_required
 @admin_required
 def index():
     return render_template("admin/index.html")
 
 
 @admin_bp.route("/admin/posts/")
-@login_required
 @admin_required
 def list_posts():
     posts = Post.get_all()
@@ -27,7 +25,6 @@ def list_posts():
 
 
 @admin_bp.route("/admin/post/", methods=['GET', 'POST'])
-@login_required
 @admin_required
 def post_form():
     """Crea un nuevo post"""
@@ -43,7 +40,6 @@ def post_form():
 
 
 @admin_bp.route("/admin/post/<int:post_id>/", methods=['GET', 'POST'])
-@login_required
 @admin_required
 def update_post_form(post_id):
     """Actualiza un post existente"""
@@ -63,7 +59,6 @@ def update_post_form(post_id):
 
 
 @admin_bp.route("/admin/post/delete/<int:post_id>/", methods=['POST', ])
-@login_required
 @admin_required
 def delete_post(post_id):
     logger.info(f'Se va a eliminar el post {post_id}')
@@ -77,7 +72,6 @@ def delete_post(post_id):
 
 
 @admin_bp.route("/admin/users/")
-@login_required
 @admin_required
 def list_users():
     users = User.get_all()
@@ -85,7 +79,6 @@ def list_users():
 
 
 @admin_bp.route("/admin/user/<int:user_id>/", methods=['GET', 'POST'])
-@login_required
 @admin_required
 def update_user_form(user_id):
     """Actualiza un usuario existente"""
@@ -104,7 +97,6 @@ def update_user_form(user_id):
 
 
 @admin_bp.route("/admin/user/delete/<int:user_id>/", methods=['POST', ])
-@login_required
 @admin_required
 def delete_user(user_id):
     logger.info(f'Se va a eliminar al usuario {user_id}')
