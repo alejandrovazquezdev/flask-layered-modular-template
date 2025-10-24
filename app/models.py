@@ -12,6 +12,7 @@ class Post(db.Model):
     title_slug = db.Column(db.String(256), unique=True, nullable=False)
     content = db.Column(db.Text)
     created = db.Column(db.DateTime, nullable=False, server_default=db.func.current_timestamp())
+    image_name = db.Column(db.String)
     
     def __repr__(self):
         return f'<Post {self.title}>'
