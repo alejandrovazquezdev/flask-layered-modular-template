@@ -1,4 +1,4 @@
-# 📝 Miniblog - Flask Blog Application
+# Miniblog - Flask Blog Application
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flask-3.0.0-green?style=for-the-badge&logo=flask" alt="Flask">
@@ -16,45 +16,45 @@
 
 ---
 
-## 🎯 Acerca del Proyecto
+## Acerca del Proyecto
 
 **Miniblog** es una aplicación de blogging completa que implementa:
 
-- 🔐 **Autenticación y autorización** de usuarios con roles
-- 📝 **CRUD completo** de posts (crear, leer, actualizar, eliminar)
-- 🖼️ **Gestión de imágenes** con subida y almacenamiento seguro
-- 👥 **Sistema de usuarios** con permisos diferenciados
-- 📧 **Envío de emails** asíncrono
-- 📄 **Paginación** de contenido
-- 🧪 **Tests unitarios** completos
-- 🔄 **Migraciones de base de datos** con Alembic
+- **Autenticación y autorización** de usuarios con roles
+- **CRUD completo** de posts (crear, leer, actualizar, eliminar)
+- **Gestión de imágenes** con subida y almacenamiento seguro
+- **Sistema de usuarios** con permisos diferenciados
+- **Envío de emails** asíncrono
+- **Paginación** de contenido
+- **Tests unitarios** completos
+- **Migraciones de base de datos** con Alembic
 
 ---
 
-## ✨ Características
+## Características
 
 ### Para Visitantes
-- ✅ Ver lista de posts publicados
-- ✅ Leer posts completos con imágenes
-- ✅ Navegación paginada
-- ✅ URLs amigables (SEO-friendly)
+- Ver lista de posts publicados
+- Leer posts completos con imágenes
+- Navegación paginada
+- URLs amigables (SEO-friendly)
 
 ### Para Usuarios Registrados
-- ✅ Crear cuenta y autenticarse
-- ✅ Sesiones persistentes
-- ✅ Email de bienvenida
+- Crear cuenta y autenticarse
+- Sesiones persistentes
+- Email de bienvenida
 
 ### Para Administradores
-- ✅ Panel de administración completo
-- ✅ Crear, editar y eliminar posts
-- ✅ Subir imágenes de cabecera (JPG/PNG)
-- ✅ Gestionar usuarios y permisos
-- ✅ Generación automática de slugs
-- ✅ Manejo de slugs duplicados
+- Panel de administración completo
+- Crear, editar y eliminar posts
+- Subir imágenes de cabecera (JPG/PNG)
+- Gestionar usuarios y permisos
+- Generación automática de slugs
+- Manejo de slugs duplicados
 
 ---
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 El proyecto implementa una **arquitectura modular en capas** utilizando:
 
@@ -118,7 +118,7 @@ flask-layered-modular-template/
 
 ---
 
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
 ### Prerequisitos
 
@@ -210,7 +210,7 @@ La aplicación estará disponible en `http://localhost:5000`
 
 ---
 
-## 🎮 Uso
+## Uso
 
 ### Área Pública
 
@@ -239,7 +239,7 @@ La aplicación estará disponible en `http://localhost:5000`
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Ejecutar todos los tests:
 
@@ -265,7 +265,7 @@ pytest --cov=app tests/
 
 ---
 
-## ⚙️ Configuración
+## Configuración
 
 ### Configuración por Entornos
 
@@ -304,20 +304,20 @@ MAIL_USE_TLS = True
 
 ---
 
-## 🔐 Seguridad
+## Seguridad
 
 El proyecto implementa múltiples capas de seguridad:
 
-- ✅ **Flask-Login** - Gestión de sesiones
-- ✅ **CSRF Protection** - Tokens en formularios (Flask-WTF)
-- ✅ **Password Hashing** - PBKDF2 (Werkzeug)
-- ✅ **Secure Filenames** - Sanitización de nombres de archivo
-- ✅ **File Validation** - Solo JPG/PNG permitidos
-- ✅ **Role-Based Access** - Decoradores `@login_required` y `@admin_required`
+- **Flask-Login** - Gestión de sesiones
+- **CSRF Protection** - Tokens en formularios (Flask-WTF)
+- **Password Hashing** - PBKDF2 (Werkzeug)
+- **Secure Filenames** - Sanitización de nombres de archivo
+- **File Validation** - Solo JPG/PNG permitidos
+- **Role-Based Access** - Decoradores `@login_required` y `@admin_required`
 
 ---
 
-## 📦 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Core
 - **Flask 3.0.0** - Framework web
@@ -343,7 +343,7 @@ El proyecto implementa múltiples capas de seguridad:
 
 ---
 
-## 🗄️ Base de Datos
+## Base de Datos
 
 ### Modelos
 
@@ -384,7 +384,7 @@ flask db history
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Página Principal
 ```
@@ -430,7 +430,7 @@ flask db history
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Producción con Gunicorn + Nginx
 
@@ -482,77 +482,16 @@ export MAIL_PASSWORD='tu-password'
 
 ---
 
-## 🔮 Roadmap
+## Documentación Adicional
 
-### Versión 2.0 (Planeada)
-
-- [ ] Sistema de comentarios
-- [ ] Likes/reacciones en posts
-- [ ] Categorías y tags
-- [ ] Búsqueda de posts
-- [ ] Perfil de usuario con foto
-- [ ] Editor Markdown
-- [ ] API REST
-- [ ] Modo oscuro
-
-### Versión 3.0 (Futuro)
-
-- [ ] WebSockets para notificaciones real-time
-- [ ] Integración con redes sociales
-- [ ] Analytics y estadísticas
-- [ ] Sistema de moderación
-- [ ] Multilenguaje (i18n)
+- [Tutorial Completo en j2logo.com](https://j2logo.com/tutorial-flask-espanol/)
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [SQLAlchemy Documentation](https://docs.sqlalchemy.org/)
+- [Flask-Login Documentation](https://flask-login.readthedocs.io/)
 
 ---
 
-## 📚 Documentación Adicional
-
-- 📖 [Tutorial Completo en j2logo.com](https://j2logo.com/tutorial-flask-espanol/)
-- 📘 [Flask Documentation](https://flask.palletsprojects.com/)
-- 📗 [SQLAlchemy Documentation](https://docs.sqlalchemy.org/)
-- 📙 [Flask-Login Documentation](https://flask-login.readthedocs.io/)
-
----
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas! Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'feat: Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-### Convenciones de Commits
-
-Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
-
-- `feat:` - Nueva funcionalidad
-- `fix:` - Corrección de bug
-- `docs:` - Cambios en documentación
-- `style:` - Formato, missing semi colons, etc.
-- `refactor:` - Refactorización de código
-- `test:` - Agregar o corregir tests
-- `chore:` - Tareas de mantenimiento
-
----
-
-## 🐛 Reportar Bugs
-
-Si encuentras un bug, por favor:
-
-1. Verifica que no esté reportado en [Issues](https://github.com/alejandrovazquezdev/flask-layered-modular-template/issues)
-2. Crea un nuevo Issue con:
-   - Descripción clara del problema
-   - Pasos para reproducirlo
-   - Comportamiento esperado vs actual
-   - Capturas de pantalla (si aplica)
-   - Entorno (OS, Python version, etc.)
-
----
-
-## 👨‍💻 Autor
+## Autor
 
 **Alejandro Vázquez**
 
@@ -561,7 +500,7 @@ Si encuentras un bug, por favor:
 
 ---
 
-## 🙏 Agradecimientos
+## Agradecimientos
 
 - Tutorial base de [j2logo.com](https://j2logo.com/)
 - Comunidad de Flask
@@ -570,21 +509,21 @@ Si encuentras un bug, por favor:
 
 ---
 
-## 📊 Estado del Proyecto
+## Estado del Proyecto
 
-- ✅ **16 lecciones completadas**
-- ✅ **~850 líneas de código Python**
-- ✅ **13 templates HTML**
-- ✅ **7 tests unitarios**
-- ✅ **2 migraciones de base de datos**
-- ✅ **100% funcional**
+- **16 lecciones completadas**
+- **~850 líneas de código Python**
+- **13 templates HTML**
+- **7 tests unitarios**
+- **2 migraciones de base de datos**
+- **100% funcional**
 
 **Última actualización:** 24 de octubre de 2025
 
 ---
 
 <p align="center">
-  Hecho con ❤️ usando Flask
+  Hecho con usando Flask
 </p>
 
 <p align="center">
