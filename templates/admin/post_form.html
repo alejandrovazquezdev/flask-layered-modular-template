@@ -2,20 +2,13 @@
 
 {% block title %}
     {% if form.title.data %}
-        {{ form.title.data }}
+        Editar: {{ form.title.data }}
     {% else %}
-        Nueva entrada
+        Crear post
     {% endif %}
 {% endblock %}
 
 {% block content %}
-    <h1>
-        {% if form.title.data %}
-            Editando: {{ form.title.data }}
-        {% else %}
-            Nueva entrada
-        {% endif %}
-    </h1>
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <div>

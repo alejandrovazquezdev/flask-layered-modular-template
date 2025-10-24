@@ -3,7 +3,9 @@
 {% block title %}Registro de usuarios{% endblock %}
 
 {% block content %}
-    <h1>Registrarse</h1>
+    {% if error %}
+        <p style="color: red;"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <div>
@@ -15,14 +17,14 @@
         </div>
         <div>
             {{ form.email.label }}
-            {{ form.email }}<br>
+            {{ form.email(size=64) }}<br>
             {% for error in form.email.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}
         </div>
         <div>
             {{ form.password.label }}
-            {{ form.password }}<br>
+            {{ form.password(size=64) }}<br>
             {% for error in form.password.errors %}
             <span style="color: red;">{{ error }}</span>
             {% endfor %}

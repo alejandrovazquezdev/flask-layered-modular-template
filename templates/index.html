@@ -3,14 +3,9 @@
 {% block title %}Tutorial Flask: Miniblog{% endblock %}
 
 {% block content %}
-    <h1>Miniblog</h1>
-    {% if posts %}
     <ul>
     {% for post in posts %}
-        <li>{{ post.title }}</li>
+        <li><a href="{{ post.public_url() }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
-    {% else %}
-    <p>No hay posts aún.</p>
-    {% endif %}
 {% endblock %}
